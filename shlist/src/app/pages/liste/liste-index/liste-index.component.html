@@ -1,0 +1,15 @@
+<h3>Liste des listes pour {{ appName }}</h3>
+<div *ngIf="!listeDeListe">
+  <p-progressSpinner></p-progressSpinner>
+</div>
+<div *ngIf="listeDeListe">
+  <p>Voici les {{ listeDeListe.length }} listes</p>
+  <ul>
+    <li
+      *ngFor="let liste of listeDeListe"
+      routerLink="/liste/details/{{ liste.id }}"
+    >
+      {{ liste.libelle }}
+    </li>
+  </ul>
+</div>
